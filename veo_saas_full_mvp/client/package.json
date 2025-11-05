@@ -1,0 +1,12 @@
+{
+  "name": "veo-saas-client",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.5.0",
+    "firebase": "^10.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  }
+}
