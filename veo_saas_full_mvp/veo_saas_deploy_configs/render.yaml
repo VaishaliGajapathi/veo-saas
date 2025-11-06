@@ -1,9 +1,8 @@
 services:
-  # Backend / Fullstack Service
   - type: web
     name: veo-saas
     env: node
-    rootDir: .   # Points to repo root where package.json exists
+    rootDir: .             # Repo root (contains package.json)
     plan: free
     buildCommand: yarn install && yarn build
     startCommand: yarn start
