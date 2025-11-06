@@ -1,22 +1,16 @@
-# render.yaml
 services:
+  # Backend / Fullstack Service
   - type: web
-    name: veo-saas-server
+    name: veo-saas
     env: node
+    rootDir: .   # Points to repo root where package.json exists
     plan: free
-    rootDir: server
-    buildCommand: npm install
-    startCommand: node index.js
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
     envVars:
       - key: GOOGLE_API_KEY
-        sync: false
-      - key: FIREBASE_SERVICE_ACCOUNT_JSON_PATH
-        sync: false
-      - key: GCS_BUCKET_NAME
-        sync: false
-      - key: STRIPE_SECRET_KEY
-        sync: false
-      - key: STRIPE_WEBHOOK_SECRET
-        sync: false
-      - key: FRONTEND_BASE_URL
-        sync: false
+        value: "<YOUR_GOOGLE_API_KEY>"
+      - key: VERCEL_ORG_ID
+        value: "<YOUR_VERCEL_ORG_ID>"
+      - key: VERCEL_PROJECT_ID
+        value: "<YOUR_VERCEL_PROJECT_ID>"
